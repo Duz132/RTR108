@@ -1,0 +1,6 @@
+#!/usr/bin/python
+#print vars() #for python2
+print("%s"%vars())
+a=10
+print("%s"%vars())
+

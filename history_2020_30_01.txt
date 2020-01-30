@@ -1,0 +1,66 @@
+    1  VirtualBox --startvm XP
+    2  quartus
+    3  git clone https://github.com/Duz132/RTR108
+    4  ls
+    5  cd RTR108/
+    6  ls
+    7  nano README.md 
+    8  ls
+    9  nano git-upload
+   10  chmod 700 hit-upload
+   11  chmod 700 git-upload
+   12  ls
+   13  ./git-upload 2020_30_01_12:51
+   14  ./git-upload 2020_30_01_12:52
+   15  ls
+   16  ls -l
+   17  nano README.md 
+   18  ./git-upload 2020_30_01_12:52
+   19  chmod 744 git-upload 
+   20  ls
+   21  ls -l
+   22  ls
+   23  mkdir Darbi
+   24  ls Darbi/
+   25  python
+   26  nano README.md 
+   27  ls
+   28  cd Darbi/
+   29  ls
+   30  cd ..
+   31  ls
+   32  rmdir Darbi/
+   33  ls
+   34  python
+   35  ipython
+   36  nano python_test.py
+   37  python python_test.py 
+   38  python --version
+   39  ls
+   40  cp python_test.py python_test_auto_exe.py 
+   41  nano python_test_auto_exe.py 
+   42  ls -l
+   43  ls -l /usr/bin/python
+   44  chmod 744 python_test_auto_exe.py 
+   45  mv python_test_auto_exe.py python_test_auto_exe
+   46  -ls -l
+   47  ls -l
+   48  ./python_test_auto_exe 
+   49  nano python_test_auto_exe 
+   50  idle &
+   51  ls
+   52  nano python_test_auto_exe 
+   53  pwd
+   54  cd ..
+   55  ls
+   56  cd RTR108/
+   57  ls
+   58  nano diary_2020_30_01.py 
+   59  nano python_test_auto_exe 
+   60  nano python_test.py
+   61  ls
+   62  python -m http.server 8000
+   63  nano README.md 
+   64  ls
+   65  history
+   66  history > history_2020_30_01.txt
