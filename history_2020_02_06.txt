@@ -1,0 +1,108 @@
+    1  VirtualBox --startvm XP
+    2  quartus
+    3  ps -aux | grep 8000
+    4  kill 2580
+    5  ps -aux | grep 8000
+    6  kill 2559
+    7  kill 2663
+    8  ps -aux | grep 8000
+    9  kill 2671
+   10  ps -aux | grep 8000
+   11  kill -9 2673
+   12  git clone https://github.com/Duz132/RTR108
+   13  ls
+   14  cd RTR108/
+   15  ls
+   16  cat history_2020_30_01.txt 
+   17  python -m http.server 8000 
+   18  python -m http.server 8000 &
+   19  ps -aux
+   20  ps -aux | grep
+   21  ps -aux | grep 8000
+   22  kill
+   23  kill 2296
+   24  python -m http.server 8000 &
+   25  ps -aux | grep 8000
+   26  kill 2353kill 2353
+   27  kill 2355
+   28  ps -aux | grep 8000
+   29  kill
+   30  python --version
+   31  ls
+   32  nano index.html
+   33  cat index.html 
+   34  python -m http.server 8000 &
+   35  ps -aux | grep 8000
+   36  kill -9 2378
+   37  kill -9 2385
+   38  ls
+   39  nano index.html 
+   40  python -m http.server 8000 &
+   41  if config; ps -aux | grep 8000
+   42  ls
+   43  python -m http.server 8000 &
+   44  python -m http.server 8000 &
+   45  ps -aux | grep 8000
+   46  kill -9 2400
+   47  kill -9 2408
+   48  ifconfig
+   49  python -m http.server 8000 &
+   50  ps -aux | grep 8000
+   51  kill -9 2416
+   52  kill -9 2514
+   53  ls
+   54  ls -lt ../../Downloads/
+   55  ls -lt -/Downloads/
+   56  ls -lt ../../Downloads/
+   57  ls -lt ../Downloads/
+   58  unzip ../Downloads/ngrok-stable-linux-amd64.zip
+   59  ls
+   60  python -m http.server 8000 &
+   61  ps -aux | grep 8000
+   62  ./ngrok http 8000
+   63  ls
+   64  ps -aux | grep 8000
+   65  kill -9 2698
+   66  ps -aux | grep 8000
+   67  kill -9 2700
+   68  kill -9 2702
+   69  kill -9 2704
+   70  kill -9 2705
+   71  kill -9 2706
+   72  ls
+   73  python -m http.server 8000 &
+   74  ./ngrok http 8000
+   75  ps -aux | grep 8000
+   76  kill 2702
+   77  kill 2718
+   78  ps -aux | grep 8000
+   79  idle
+   80  idle &
+   81  python -m http.server 8000 &
+   82  python -m http.server 8000 & > log.txt
+   83  ps -aux | grep 8000
+   84  kill 2888
+   85  kill 2929
+   86  ls
+   87  nano log.txt 
+   88  python -m http.server 8000 > log.txt
+   89  nano log.txt 
+   90  python http.server 8000 > server.log &
+   91  python -m http.server 8000 > server.log &
+   92  ps -aux | gred 8000
+   93  ps -aux | grep 8000
+   94  kill 3060
+   95  kill 3073
+   96  cat server.log 
+   97  nano server.log 
+   98  python -m http.server 8000 > server.txt &
+   99  ps -aux | grep 8000
+  100  kill 3081
+  101  kill 3083
+  102  ls
+  103  nano server.txt
+  104  cat log.txt 
+  105  python -m http.server 8000 > log.txt
+  106  nano log.txt 
+  107  ls
+  108  history > history_2020_02_06.txt
