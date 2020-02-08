@@ -2,14 +2,14 @@
 Datormācība(speckurss) elektroniskā klāde (2020 REBMO1 2. semestris)
 
 ## 1. nodarbība
-python -   
-exit() -   
-vars() -   
-type(a) -   
-print("%s"%(a.__doc__)) -   
-ipython -   
-a. + TAB -   
-print(a.__doc__) -   
+python - python execute  
+exit() - python exit  
+vars() - variables  
+type(a) - mainīga a tips  
+print("%s"%(a.__doc__))    
+ipython - ipython execute  
+a. + TAB - ātrs komandas papildinājums  
+print(a.__doc__)    
 nano fails.py - python skripts  
 python fails.py - script execute python  
 python --version - noklusēta python versia  
@@ -18,8 +18,8 @@ idle & - atvert shell logu
 & pēc python vai idle - komandloga strādās pēc stārtēšanas  
 file - open - 2 logi ar failu un kom logu  
 failā ctrl+s ; F5 - save & execute failu  
-print(__builtins__.__doc__) -   
-__builtins__.TypeError -   
+print(__builtins__.__doc__)    
+__builtins__.TypeError    
 cmath - kompleksu skaitļu bibliotēka  
 (*)(bez()) (failā) - all  
 python -m http.server 8000 &  
@@ -32,5 +32,5 @@ ifconfig - atrast ip?(piem 10.152.17.95)
 ls -lt ../Downloads - atrast mapi downloads  
 unzip ../Downloads/ngrok-stable-linux-amd64.zip - unzip failu  
 ./ngrok http 8000 - startē ngrok serveri(forwarding - ip)  
-LIKUMDOŠANA SAITĀ  
-
+"PYTHONUNBUFFERED=x python3 -m http.server &> server.log & echo $! > http.server.pid" - komanda lai būtu servera log fails  
+"kill $(cat http.server.pid)" - komanda lai kill augšējas komandas serveri  
