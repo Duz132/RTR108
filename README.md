@@ -133,12 +133,12 @@ while True:
     print(line)  
 print('Done!')  
   
-> hello there  
+">" hello there  
 hello there  
-> # don't print this  
-> print this!  
+">" # don't print this  
+">" print this!  
 print this!  
-> done  
+">" done  
 Done!  
   
 del a - delete variable a  
