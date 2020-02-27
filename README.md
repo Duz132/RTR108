@@ -2,6 +2,9 @@
 Datormācība(speckurss) elektroniskā klāde (2020 REBMO1 2. semestris)
 
 ## 1. nodarbība
+jypiter notebook ; new+python3 - execute new atskaites veidu  
+shift+enter - shuuna ir gatava  
+RTR223 tatusmatrix github-aa - keedes apguushana ja gribeetos  
 python - python execute  
 exit() - python exit  
 vars() - variables  
