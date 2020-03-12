@@ -1,0 +1,5 @@
+* Spice netlister for gnetlist
+R1 0 2 1k
+C1 1 2 3,3nF
+V1 0 1 sin(0 10 1kHz)
+.END
