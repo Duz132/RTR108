@@ -38,7 +38,8 @@ unzip ../Downloads/ngrok-stable-linux-amd64.zip - unzip failu
 "PYTHONUNBUFFERED=x python3 -m http.server &> server.log & echo $! > http.server.pid" - komanda lai būtu servera log fails  
 "kill $(cat http.server.pid)" - komanda lai kill augšējas komandas serveri  
 jupiter notebook - atskaitem  
-## PY4E  
+## 2-4 nodarbības
+### PY4E  
 // - lai būtu dalīšanas rezultāts integer-ā  
 / - dalīšanas rezultāts float-ā  
 ** - pakāpe (2**3=8)  
@@ -51,7 +52,7 @@ int() - convert value to int(not string) after input()
 float() - kā int(), tikai float  
 str() - kā int(), tikai string  
 '#' - comment  
-## BOOLEAN EXPRESSION
+### BOOLEAN EXPRESSION
 == - boolean (bool) expression, answer true/false (5 == 5 OR 5 == 6)  
 x != y               # x is not equal to y  
 x > y                # x is greater than y  
@@ -60,7 +61,7 @@ x >= y  (NOT =>)             # x is greater than or equal to y
 x <= y (NOT =<)              # x is less than or equal to y  
 x is y               # x is the same as y  
 x is not y           # x is not the same as y  
-## LOGICAL OPERATORS  
+### LOGICAL OPERATORS  
 AND (x > 0 and x < 10)  
 OR (n%2 == 0 or n%3 == 0)  
 NOT (not (x > y) is true if x > y is false)  
@@ -84,7 +85,7 @@ else:
 input() - function to input sth  
 int() - function to make for example string number to integer  
 float() - function to make for example string number to float  
-# EXCEPTIONS  
+### EXCEPTIONS  
 TRY and EXCEPT s that you know that some sequence of instruction(s) may have a problem and you want to add some statements to be executed if an error occurs  
 inp = input('Enter Fahrenheit Temperature:')  
 try:  
@@ -94,7 +95,7 @@ try:
 except:  
     print('Please enter a number')  
 Python starts by executing the sequence of statements in the try block. If all goes well, it skips the except block and proceeds. If an exception occurs in the try block, Python jumps out of the try block and executes the sequence of statements in the except block  
-## FUNCTIONS  
+### FUNCTIONS  
 type() - returns type of variable (type(32) -> class 'int')  
 max() - returns max(strādā arī ar string (ASCII))  
 min() - returns min(strādā arī ar string (ASCII))  
@@ -111,7 +112,7 @@ randint(5, 10) - integer between 5 and 10 icluding both
 t = [1, 2, 3]  
 random.choice(t)  
 choice - choose an element from a sequence at random  
-# ADDING NEW FUNCTIONS  
+### ADDING NEW FUNCTIONS  
 def - keyword  
 def print_lyrics():  
     print("I'm a lumberjack, and I'm okay.")  
@@ -123,15 +124,15 @@ You can call functions in other function!
 math.sin you pass a number as an argument. Some functions take more than one argument:  
 math.pow takes two, the base and the exponent.  
 bruce - argument to a parameter  
-## LOOPS  
-# WHILE  
+### LOOPS  
+### WHILE  
 n = 5  
 while n > 0:  
    print(n)  
    n = n - 1    
 print('Blastoff!')  
 Counts down to 5 and says Blastoff!  
-## INFINITE LOOP  
+### INFINITE LOOP  
 n = 10  
 while True:  
     print(n, end=' ')  
@@ -175,7 +176,7 @@ for itervar in [3, 41, 12, 9, 74, 15]:
         smallest = itervar  
     print('Loop:', itervar, smallest)  
 print('Smallest:', smallest)  
-## STRING  
+### STRING  
 fruit = 'banana'  
 fruit[1] - position 1(a)(the first position is 0(b), can't be 1.5) from string fruit  
 len - function which return the length of string(6), but fruit[len(fruit)] is indexerror, because the is no 6-th letter. We can use fruit[len(fruit)-1]  
@@ -210,29 +211,29 @@ fruit.lower() - make BANANA into banana or Banana into banana
 %d - integer, decimal  
 %g - floating-point number  
 %s - string  
-## FILES  
-# Opening files  
+### FILES  
+### Opening files  
 fhand = open('mbox.txt') - open mbox.txt  
 \n - kā C valodā  
-# Reading files  
+### Reading files  
 line count can be counted using for loop with (for line in fhand:)  
 inp = fhand.read() - read file from fhand  
 Second call using len of file will male it 0, so it is a good idea to store it in variable  
-# Searching through a file  
+### Searching through a file  
 Searching can be made by line.startswith('something')  
 line.rstrip() - method which strips whitespace from the right side of a string  
 if line.find('@uct.ac.za') == -1: continue - -1 => line was not found, continue = skip this  
-# Letting the user choose the file name  
+### Letting the user choose the file name  
 fname = input('Enter the file name: ')  
 fhand = open(fname)  
-# If file name was not found  
+### If file name was not found  
 fname = input('Enter the file name: ')  
 try:  
 fhand = open(fname)  
 except:  
 print('File cannot be opened:', fname)  
 exit()  
-# Writing files  
+### Writing files  
 file = open('output.txt','w') - open file with mode write  
 file.write(line) - write in file what line contains  
 file.close() - close file  
