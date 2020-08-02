@@ -1,17 +1,12 @@
-import urllib.request, urllib.parse, urllib.error
-from bs4 import BeautifulSoup
-import ssl
+class PartyAnimal:
+   x = 0
 
-# Ignore SSL certificate errors
-ctx = ssl.create_default_context()
-ctx.check_hostname = False
-ctx.verify_mode = ssl.CERT_NONE
+   def party(self) :
+     self.x = self.x + 1
+     print("So far",self.x)
 
-url = input('Enter - ')
-html = urllib.request.urlopen(url, context=ctx).read()
-soup = BeautifulSoup(html, 'html.parser')
-
-# Retrieve all of the anchor tags
-tags = soup('a')
-for tag in tags:
-    print(tag.get('href', None))
+an = PartyAnimal()
+print ("Type", type(an))
+print ("Dir ", dir(an))
+print ("Type", type(an.x))
+print ("Type", type(an.party))
