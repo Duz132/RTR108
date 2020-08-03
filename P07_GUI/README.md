@@ -1,8 +1,9 @@
 # GUI PyQt5 PyCalc veidošana
 Nodarbībā Nr.7 es izveidoju kalkulatoru, izmantojot https://realpython.com/python-pyqt-gui-calculator/ mājaslapu un pēc tam izdarīju nelielas izmaiņas.
 
-## kalkulators no realpython.com
+## Kalkulators no realpython.com
 Pirmkārt, es izvedoju kalkulatoru no realpython.com, kurš izskatās :  
+>  
 ![CalcPiem](calc_piemers.png)  
 Pēc tam es nolēmu to mazliet pārtaisīt, izmainījot loga izmērus:  
 >  
