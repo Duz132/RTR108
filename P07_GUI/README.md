@@ -62,4 +62,5 @@ Nomainīju uz:
 >           }  
 >  
 Galu galā tās izskatās šādi:  
+>  
 ![CalcPiem](calc_edited.png)
