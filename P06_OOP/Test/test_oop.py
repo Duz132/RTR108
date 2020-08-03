@@ -1,5 +1,5 @@
 class Cilveks:
-    Vards = "Stas"
+    Vards = "Stanislavs"
     Uzvards = "Tarasov"
     Vecums = 10
 
