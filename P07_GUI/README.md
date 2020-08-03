@@ -5,10 +5,15 @@ Nodarbībā Nr.7 es izveidoju kalkulatoru, izmantojot https://realpython.com/pyt
 Pirmkārt, es izvedoju kalkulatoru no realpython.com, kurš izskatās :  
 ![CalcPiem](calc_piemers.png)  
 Pēc tam es nolēmu to mazliet pārtaisīt, izmainījot loga izmērus:  
+>  
 >self.setFixedSize(235, 235)  
+>  
 Nomainīju uz:  
+>  
 >self.setFixedSize(185, 260)  
+>  
 Kā arī nomainīju pogas atrašanas vietu, lai tās apmērām izskatās kā kalkulatorā manā telefonā:  
+>  
 >buttons = {"7": (0, 0),  
 >           "8": (0, 1),  
 >           "9": (0, 2),  
@@ -30,7 +35,9 @@ Kā arī nomainīju pogas atrašanas vietu, lai tās apmērām izskatās kā kal
 >           "+": (3, 3),  
 >           "=": (3, 4),  
 >           }  
+>  
 Nomainīju uz:  
+>  
 >buttons = {"7": (1, 0),  
 >           "8": (1, 1),  
 >           "9": (1, 2),  
@@ -52,5 +59,6 @@ Nomainīju uz:
 >           "+": (3, 3),  
 >           "=": (4, 3),  
 >           }  
+>  
 Galu galā tās izskatās šādi:  
 ![CalcPiem](calc_edited.png)
