@@ -12,11 +12,11 @@ Internal:
 td un th ir saistīti ar tabulas veidošanu  
 External:  
 >  
->  {<link rel="stylesheet" href="voltage_divider.css">}  
+![External_README](CSS_README_EXTERNAL.png)
 >  
 Kurš norāda uz ārējo .css failu  
 Inline:  
 >  
-> {<h1 style="color:#4169E1;">Vienkāršu elektrisku shēmu modelēšana</h1>}  
+![Inline_README](CSS_README_INLINE.png)
 >  
 Tiek izmantots lai nomainītu virsraksta krāsu  
