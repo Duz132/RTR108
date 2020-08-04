@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML_and_CSS</title>
+<link rel="stylesheet" href="voltage_divider.css">
+<style>
+    body {
+        height: 842px;
+        width: 595px;
+        /* to centre page on screen*/
+       <!-- margin-left: auto;
+        margin-right: auto;-->
+    }
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+	}
+
+	td, th {
+  border: 2px solid black;
+  text-align: center;
+  padding: 3px;
+	}
+    </style>
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}})</script> 
+</head>
+<body>
+
+<h1 style="color:#4169E1;">Vienkāršu elektrisku shēmu modelēšana</h1>
+
+<h2>Darba mērķi</h2>
+<p>Iemācīties veidot dokumentus, izmantojot LaTeX</p>
+
+<h2>1 Teorētiska daļa</h2>
+<!--SHEMA BEGIN-->
+<br><br><br><br><br><br><br><br><br><br><br>
+<!--SHEMA END-->
+
+<p>Vērtības no 9. nodarbības(izmantojot studenta apliecības numuru):<br>$$U_{in} = {14.2 V}$$$$R_1 = {5 Ω}$$$$R_2 = {3 Ω}$$<br>Izejas sprieguma formula:<br></p>
+$$ U_{out} = {U_{in} \cdot R_2 \over R_1 + R_2} = {14.2 \cdot 3 \over 8} = {5.325 V},$$
+<p>kur<br>Uin - ieejas spriegums,<br>Uout - izejas spriegums,<br>R1 - pirma rezistora vērtība,<br>R2 - otra rezistora vērtība.</p>
+
+<h2>2 Eksperimentālā daļa</h2>
+<h3>2.1 Shēmas zīmēšana (GSchem)</h3>
+<p>Izmantojot GSchem, es uzzīmēju sprieguma dalītāja shēmu. GSchem es palaidu ar konsoles palīdzību, izmantojot komandu <b>"gschem"</b>. Pēc tam atvērās Gschem logs:</p>
+<center><img src='https://github.com/Duz132/RTR108/blob/master/P10_P11_LaTeX/RTR108/pictures/gschem1.png?raw=true' width=350 alt='GSchem logs'><br><p>2. attēls. GSchem logs</p></center>
+<p>Ar <b>”Add component”</b> palīdzību, es ievietoju komponentes. Piemēram, kā es ievietoju <b>”voltage source”</b> :</p>
+<center><img src='https://github.com/Duz132/RTR108/blob/master/P10_P11_LaTeX/RTR108/pictures/gschem2.png?raw=true' width=350 alt='GSchem ”Add component” logs'><br><p>3. attēls. GSchem ”Add component” logs</p></center>
+<p>Pēc tam savienoju visus elementus ar vadiem, ievietoju zemi un katram komponentam norādīju vērtības, pievienojot <b>”Value”</b> vērtību katram elementam.</p>
+<center><img src='https://github.com/Duz132/RTR108/blob/master/P10_P11_LaTeX/RTR108/pictures/gschem4.png?raw=true' width=350 alt='GSchem "Value" vērtības pievienošana” logs'><br><p>4. attēls. GSchem "Value" vērtības pievienošana</p></center><center><img src='https://github.com/Duz132/RTR108/blob/master/P10_P11_LaTeX/RTR108/pictures/gschem3.png?raw=true' width=350 alt='GSchem "Voltage_divider" shēma'><br><p>5. attēls. GSchem "Voltage_divider" shēma</p></center>
+
+<h3>2.2 Elementu-mezglu faila izveidošana (gnetlist)</h3>
+<p>Šīs fails mums ir vajadzīgs, lai veiktu shēmas simulāciju. Fails saturēs elementu vērtības un mezglus pie kuriem
+šie elementi ir savienoti. Lai izveidotu šo failu es izmantoju gnetlist komandu :<br><br><b>gnetlist -g spice -o voltage_divider.net voltage_divider.sch</b>,<br><br>kur<br>voltage_divider.net - fails ar elementu-mezglu sarakstu<br>voltage_divider.sch - shēmas fails<br><br>
+Ja shēmā viss ir izdarīts pareizi, tad pēc <b>”Loading schematic”</b> komandas izveidosies fails <b>voltage_divider.net</b>:</p>
+<center><img src='https://github.com/Duz132/RTR108/blob/master/P10_P11_LaTeX/RTR108/pictures/gnetlist.png?raw=true' width=350 alt='Pēc gnetlist jauns ”voltage_divider.net” fails'><br><p>6. attēls. Pēc gnetlist jauns ”voltage_divider.net” fails</p></center>
+
+<h3>2.3 Shēmas simulācija (NGSpice)</h3>
+<p>Izmantojot NGSpice, es varēju veikt shēmas simulāciju.<br>Lai veiktu simulāciju, pirmkārt, vajag konsolē uzrakstīt <b>"ngspice"</b>, lai to palaist:</p>
+<center><img src='https://github.com/Duz132/RTR108/blob/master/P10_P11_LaTeX/RTR108/pictures/ngspice1.png?raw=true' width=350 alt='NGSpice konsolē'><br><p>7. attēls. NGSpice konsolē</p></center>
+<p>Otrkārt, vajag uzrakstīt <b>”source”</b> komandu, kura norāda failu, kuram tiks veikta simulācija :</p>
+<center><img src='https://github.com/Duz132/RTR108/blob/master/P10_P11_LaTeX/RTR108/pictures/ngspice2.png?raw=true' width=350 alt='NGSpice source komanda'><br><p>8. attēls. NGSpice source komanda</p></center>
+<p>Pēc tam izmantosim komandu <b>”tran solis beigas sākums”</b>, kura veiks transient simulāciju laika posmā. Pēc simulācijas veikšanas parādīsies simulācijas rezultāti:</p>
+<center><img src='https://github.com/Duz132/RTR108/blob/master/P10_P11_LaTeX/RTR108/pictures/ngspice3.png?raw=true' width=350 alt='NGSpice tran simulācija'><br><p>9. attēls. NGSpice tran simulācija</p></center>
+<p>Pēc simulācijas veikšanas, vajag uzzīmēt un izvadīt simulācijas grafikus. Izmantojam komandu <b>” plot ”mezgls” ”</b>, kura izvada grafiku un <b>”hardcopy faila nosaukums ”mezgls” ”</b>, kura izvadīs grafiku failā:</p>
+<center><img src='https://github.com/Duz132/RTR108/blob/master/P10_P11_LaTeX/RTR108/pictures/ngspice4.png?raw=true' width=350 alt='NGSpice NGSpice plot komanda'><br><p>10. attēls. NGSpice plot komanda</p></center>
+<center><img src='https://github.com/Duz132/RTR108/blob/master/P10_P11_LaTeX/RTR108/pictures/ngspice5.png?raw=true' width=350 alt='NGSpice NGSpice hardcopy komanda'><br><p>11. attēls. NGSpice hardcopy komanda</p></center>
+
+<h2>3 Rezultātu apkopojums un secinājumi</h2>
+<center>
+<table style="width:50%">
+	<tr>
+    	<th></th>
+        <th>$$ U_{out}, V $$</th>
+    </tr>
+    <tr>
+    	<td>Teorētiskie aprēķini</td>
+        <td>5.325</td>
+    </tr>
+    <tr>
+    	<td>Shēmas simulācija</td>
+        <td>5.325</td>
+    </tr>
+</table>
+</center>
+<p>Ir redzams, ka teorētikie un simulācijas rezultāti sakrīt, tāpēc es varu secināt, ka viss bija izdarīts pareizi. Secinājumā, visi darba mērķi bija izpildīti.</p>
+
+<!-- JavaScript Shēmas zīmēšanas kods -->
+
+<canvas id="canvas" width="200" height="100" style="position:absolute; top:0px; left:0px; z-index:1; border:1px solid #d3;">
+<script>
+"use strict"
+
+var wW = window.innerWidth;
+var wH = window.innerHeight;
+var canvasHTML = document.getElementById("canvas");
+canvasHTML.width = wW;
+canvasHTML.height = wH;
+var ctx = canvasHTML.getContext("2d");
+var ix;
+var iy;
+var x;
+var y;
+var d;
+var dx;
+var dy;
+
+function beginCircuit(a, b) {
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = "#000";
+    ctx.beginPath();
+    x = a;
+    y = b;
+    d = 0;
+    dx = 1;
+    dy = 0;
+    ix = x;
+    iy = y;
+    ctx.moveTo(x, y);
+    drawWire(50);
+    //drawPower();
+}
+
+function endCircuit() {
+    ctx.lineTo(ix, iy);
+    ctx.stroke();
+}
+
+function drawWire(l) {
+    x += dx * l;
+    y += dy * l;
+    ctx.lineTo(x, y);
+}
+
+function drawPower() {
+    var n;
+    drawWire(10);
+    n = 3;
+    ctx.moveTo(x + 10 * dy, y + 10 * dx);
+    ctx.lineTo(x - 10 * dy, y - 10 * dx);
+    x += dx * 5;
+    y += dy * 5;
+    while (n--) {
+        ctx.moveTo(x + 15 * dy, y + 15 * dx);
+        ctx.lineTo(x - 15 * dy, y - 15 * dx);
+        x += dx * 5;
+        y += dy * 5;
+        ctx.moveTo(x + 10 * dy, y + 10 * dx);
+        ctx.lineTo(x - 10 * dy, y - 10 * dx);
+        if (n != 0) {
+            x += dx * 5;
+            y += dy * 5;
+        }
+    }
+    ctx.moveTo(x, y);
+    drawWire(10);
+}
+
+function drawCapacitor() {
+    drawWire(22.5);
+    ctx.moveTo(x + 10 * dy, y + 10 * dx);
+    ctx.lineTo(x - 10 * dy, y - 10 * dx);
+    x += dx * 5;
+    y += dy * 5;
+    ctx.moveTo(x + 10 * dy, y + 10 * dx);
+    ctx.lineTo(x - 10 * dy, y - 10 * dx);
+    ctx.moveTo(x, y);
+    drawWire(22.5);
+}
+
+function drawInductor() {
+    var n, xs, ys;
+    drawWire(9);
+    n = 4;
+    xs = 1 + Math.abs(dy);
+    ys = 1 + Math.abs(dx);
+    x += dx * 6;
+    y += dy * 6;
+    ctx.scale(xs, ys);
+    while (n--) {
+        //ctx.moveTo(x/xs+5*Math.abs(dx),y/ys+5*dy);
+        ctx.moveTo(x / xs + 5 * Math.abs(dx), y / ys + 5 * dy);
+        ctx.arc(x / xs, y / ys, 5, Math.PI / 2 * dy, Math.PI + Math.PI / 2 * dy, 1);
+        x += 6.5 * dx;
+        y += 6.5 * dy;
+        if (n != 0) {
+            if (dx >= 0) {
+                ctx.moveTo(x / xs - 5 * dx, y / ys - 5 * dy);
+                //ctx.lineTo(0,0);
+            }
+
+            ctx.moveTo(x / xs - 5 * dx, y / ys - 5 * dy);
+            //alert("a"+ctx.stroke());
+            ctx.arc(x / xs - 6.5 / 2 * dx, y / ys - 6.5 / 2 * dy, 1.5, Math.PI + Math.PI / 2 * dy, Math.PI / 2 * dy, 1);
+        }
+    }
+    ctx.moveTo(x / xs - 1.75 * dx, y / ys - 1.75 * dy);
+    ctx.scale(1 / xs, 1 / ys);
+    ctx.lineTo(x, y);
+    drawWire(9);
+}
+
+function drawResistor() {
+    var n;
+    drawWire(10);
+    n = 5;
+    x += dx * 5;
+    y += dy * 5;
+    while (n--) {
+        ctx.lineTo(x - 5 * dy, y - 5 * dx);
+        ctx.lineTo(x + 5 * dy, y + 5 * dx);
+        x += 5 * dx;
+        y += 5 * dy;
+    }
+    ctx.lineTo(x, y);
+    drawWire(10);
+}
+
+function turnClockwise() {
+    d++;
+    dx = Math.cos(1.570796 * d);
+    dy = Math.sin(1.570796 * d);
+}
+
+function turnCounterClockwise() {
+    d--;
+    dx = Math.cos(1.570796 * d);
+    dy = Math.sin(1.570796 * d);
+}
+
+beginCircuit(250, 260);
+drawWire(50);
+turnClockwise();
+drawWire(15);
+drawResistor();
+drawWire(15);
+drawResistor();
+drawWire(15);
+turnClockwise();
+drawWire(100);
+turnClockwise();
+drawWire(50);
+drawPower();
+endCircuit();
+
+ctx.fillText("Uin",210,335);
+ctx.fillText("R1",365,305);
+ctx.fillText("R2",365,370);
+ctx.fillText("1. attēls. Sprieguma dalītāja shēma",215,435);
+
+</script> 
+</body>
+</html>
