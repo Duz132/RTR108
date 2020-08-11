@@ -1,0 +1,4 @@
+
+Circuit: * spice netlister for gnetlist
+
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
